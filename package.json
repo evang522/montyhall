@@ -1,0 +1,27 @@
+{
+  "name": "montyhall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go": "ts-node-dev ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evang522/montyhall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evang522/montyhall/issues"
+  },
+  "homepage": "https://github.com/evang522/montyhall#readme",
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.42",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.4"
+  }
+}
