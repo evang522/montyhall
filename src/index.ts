@@ -30,7 +30,7 @@ class Main {
             count++;
         }
 
-        console.log(`Ran guessing game ${iterations} times. Got the answer write ${setMath.getAverage() * 100}% of the time when deciding NOT to switch answers.`);
+        console.log(`Ran guessing game ${iterations} times. Got the answer right ${setMath.getAverage() * 100}% of the time when deciding NOT to switch answers.`);
     }
 
     public runGuessSimulationWithSwitching(iterations: number): void
@@ -45,7 +45,7 @@ class Main {
             count++;
         }
 
-        console.log(`Ran guessing game ${iterations} times. Got the answer write ${setMath.getAverage() * 100}% of the time when deciding to SWITCH answers.`);
+        console.log(`Ran guessing game ${iterations} times. Got the answer right ${setMath.getAverage() * 100}% of the time when deciding to SWITCH answers.`);
     }
 }
 
