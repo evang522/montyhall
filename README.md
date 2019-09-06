@@ -8,7 +8,7 @@ Would you continue to choose door 1 for your final answer? Or would you switch y
 
 According to statisticians, one should always switch to door three.
 
-There are statistical theories that go into the explanation for this, but it's also cooler something to see a practical proof thereof.
+There are statistical theories that go into the explanation for this, but it's also cooler sometimes to see a practical proof thereof.
 
 
 ### This is a proof of concept with software
