@@ -9,6 +9,7 @@ process.stdin.resume();
 
 class Main {
     public ITERATIONS = 100000;
+    public NUMER_OF_CHOICES = 3;
 
     public static execute(): void
     {
@@ -24,7 +25,7 @@ class Main {
         let count = 0;
         while (count < iterations)
         {
-            const choices = new Choices(3);
+            const choices = new Choices(this.NUMER_OF_CHOICES);
             const guesser = new Guesser(choices, false);
             setMath.addDataPoint(guesser.getResults());
             count++;
@@ -39,7 +40,7 @@ class Main {
         let count = 0;
         while (count < iterations)
         {
-            const choices = new Choices(3);
+            const choices = new Choices(this.NUMER_OF_CHOICES);
             const guesser = new Guesser(choices, true);
             setMath.addDataPoint(guesser.getResults());
             count++;

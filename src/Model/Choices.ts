@@ -5,6 +5,10 @@ class Choices {
     public constructor(
         numberOfChoices: number,
     ) {
+        if (numberOfChoices < 2) {
+            throw new Error('Must provide more than 1 choice.');
+        }
+
         this.choiceList = [...new Array(numberOfChoices)].map(() => false);
         this.indexOfCorrectChoice = this.generateRandomChoiceIndex();
         this.choiceList[this.indexOfCorrectChoice] = true;
