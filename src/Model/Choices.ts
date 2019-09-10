@@ -9,9 +9,8 @@ class Choices {
             throw new Error('Must provide more than 1 choice.');
         }
 
-        this.choiceList = [...new Array(numberOfChoices)].map(() => false);
+        this.choiceList = [...new Array(numberOfChoices)].map(() => true);
         this.indexOfCorrectChoice = this.generateRandomChoiceIndex();
-        this.choiceList[this.indexOfCorrectChoice] = true;
     }
 
 
@@ -28,6 +27,29 @@ class Choices {
             answer = this.generateRandomChoiceIndex();
         }
         return answer;
+    }
+
+    public openAllDoorsExceptCorrectAndGuessed(firstGuessedDoorIndex: number)
+    {
+        let counter = 0;
+        for (let c: number = 0; c < this.choiceList.length; c++)
+        {
+            if (c === this.indexOfCorrectChoice)
+            {
+                return;
+            }
+
+            if (c === firstGuessedDoorIndex)
+            {
+                return;
+            }
+
+            if (counter <= (this.choiceList.length - 2))
+            {
+                this.choiceList[c] = false;
+                counter++;
+            }
+        }
     }
 
 }
