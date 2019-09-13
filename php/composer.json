@@ -1,0 +1,17 @@
+{
+    "name": "evang522/php",
+    "description": "php monty hall",
+    "require": {
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "authors": [
+        {
+            "name": "Evan Garrett",
+            "email": "evan@fitfox.de"
+        }
+    ],
+    "scripts": {
+        "cs": "phpcs --standard=PSR2 -p ./src",
+        "fixcs": "phpcbf --standard=PSR2 -p ./src"
+    }
+}
