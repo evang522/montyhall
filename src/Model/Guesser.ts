@@ -1,48 +1,44 @@
 import Choices from "./Choices";
 
 class Guesser {
-    private initialGuess: number | null = null;
-    private finalAnswer: number | null = null;
+    private initialGuessDoorIndex: number | null = null;
+    private finalAnswerDoorIndex: number | null = null;
     
     public constructor (
-        private choices: Choices,
+        public choices: Choices,
         private switchAnswers: boolean,
     ) {}
     
     public makeFirstGuess(): void 
     {
         // Make a random guess amongst the options available.
-        this.initialGuess = this.choices.generateRandomChoiceIndex();
+        this.initialGuessDoorIndex = this.choices.generateRandomDoorIndex();
     }
 
     public makeSecondGuess(): void
     {
-        // now that you have made a guess, another of the doors needs to be opened to reveal that it is not the correct answer
-        // so for example if you chose index 1, then index 3 would have to be revealed as the next incorrect answer. 
-        // Then, if switchAnswers is true, then switch.
         if (!this.switchAnswers)
         {
-            this.finalAnswer = this.initialGuess;
+            this.finalAnswerDoorIndex = this.initialGuessDoorIndex;
             return;
         }
         
-        const revealedIncorrectAnswer = this.choices
-            .getIncorrectAnswerThatIsNotASpecificIndex(this.initialGuess!);
-
-        let newAnswer = this.initialGuess;
-        while (newAnswer === this.initialGuess || newAnswer === revealedIncorrectAnswer)
+        this.choices.openAllDoorsExceptCorrectAndGuessed(this.initialGuessDoorIndex!);
+        
+        let newAnswerDoorIndex = 0;
+        while (newAnswerDoorIndex === this.initialGuessDoorIndex ||  this.choices.doorList[newAnswerDoorIndex].open === true)
         {
-            newAnswer = this.choices.generateRandomChoiceIndex();
+            newAnswerDoorIndex = this.choices.generateRandomDoorIndex();
         }
         
-        this.finalAnswer = newAnswer;
+        this.finalAnswerDoorIndex = newAnswerDoorIndex;
     }
 
     public getResults(): number
     {
         this.makeFirstGuess();
         this.makeSecondGuess();
-        if (this.finalAnswer === this.choices.indexOfCorrectChoice)
+        if (this.finalAnswerDoorIndex === this.choices.indexOfCorrectChoice)
         {
             return 1;
         }
