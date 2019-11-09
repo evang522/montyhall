@@ -24,7 +24,9 @@ class Choices {
         return Math.floor(Math.random() * this.doorList.length);
     }
 
-    public getIncorrectAnswerThatIsNotASpecificIndex(providedIndex: number): number
+    public getIncorrectAnswerThatIsNotASpecificIndex(
+        providedIndex: number
+    ): number
     {
         let answer = this.indexOfCorrectChoice;
         while (answer === this.indexOfCorrectChoice || answer === providedIndex)
@@ -34,7 +36,9 @@ class Choices {
         return answer;
     }
 
-    public openAllDoorsExceptCorrectAndGuessed(firstGuessedDoorIndex: number)
+    public openAllDoorsExceptCorrectAndGuessed(
+        firstGuessedDoorIndex: number
+    )
     {
         let numberOfDoorsOpenedByMonty = 0;
         const limitOfDoorsToOpen = this.onlyOpenOneDoor ? 1 : (this.doorList.length - 2);

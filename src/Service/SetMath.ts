@@ -20,6 +20,11 @@ class SetMath<DataStructure> {
 
         return Number((total / this.dataSet.length).toFixed(5));
     }
+
+    public getDataPointCount(): number
+    {
+        return this.dataSet.length;
+    }
 }
 
 export default SetMath;

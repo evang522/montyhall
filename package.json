@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "go": "ts-node-dev ./src/index.ts"
+    "go": "ts-node-dev --clear ./src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "@types/node": "^12.7.4"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "typescript": "^3.6.2"
   }
 }
