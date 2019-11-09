@@ -19,9 +19,9 @@
   "homepage": "https://github.com/evang522/montyhall#readme",
   "devDependencies": {
     "ts-node-dev": "^1.0.0-pre.42",
-    "typescript": "^3.6.2"
+    "@types/node": "^12.7.4"
   },
   "dependencies": {
-    "@types/node": "^12.7.4"
+    "typescript": "^3.6.2"
   }
 }
